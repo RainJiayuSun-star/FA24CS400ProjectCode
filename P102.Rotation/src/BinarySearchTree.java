@@ -26,7 +26,7 @@ public class BinarySearchTree<T extends Comparable<T>> implements SortedCollecti
         // Compare newNode's data with the current subtree node's data
         int compare = newNode.getData().compareTo(subtree.getData());
 
-        if (compare < 0) {
+        if (compare <= 0) {
             // Go to the left subtree
             if (subtree.getLeft() == null) {
                 subtree.setLeft(newNode);
@@ -132,124 +132,6 @@ public class BinarySearchTree<T extends Comparable<T>> implements SortedCollecti
     @Override
     public boolean isEmpty() {
         return root == null;
-    }
-
-    /**
-     * Performs the rotation operation on the provided nodes within this tree.
-     * When the provided child is a left child of the provided parent, this
-     * method will perform a right rotation. When the provided child is a right
-     * child of the provided parent, this method will perform a left rotation.
-     * When the provided nodes are not related in one of these ways, this
-     * method will either throw a NullPointerException: when either reference is
-     * null, or otherwise will throw an IllegalArgumentException.
-     *
-     * @param child is the node being rotated from child to parent position
-     * @param parent is the node being rotated from parent to child position
-     * @throws NullPointerException when either passed argument is null
-     * @throws IllegalArgumentException when the provided child and parent
-     *     nodes are not initially (pre-rotation) related that way
-     */
-    protected void rotate(BSTNode<T> child, BSTNode<T> parent)
-            throws NullPointerException, IllegalArgumentException, IllegalAccessException {
-        if (child == null || parent == null) {
-            throw new NullPointerException("Neither the parent nor the child node can be null.");
-        }
-
-        // Determine if the child is the left or right child of the parent
-        if (parent.getLeft() == child) { // Perform a right rotation
-            rightRotate(child, parent);
-        } else if (parent.getRight() == child) { // Perform a left rotation
-            leftRotate(child, parent);
-        } else {
-            throw new IllegalArgumentException("The provided nodes are not related as parent-child.");
-        }
-    }
-
-    /**
-     * Performs a right rotation on the subtree rooted at the specified parent node. This operation promotes the left
-     * child to the parent's position in the subtree. The right subtree of the child node becomes the left subtree of
-     * the parent.
-     * @param child the left child of the parent node that will be promoted to the parent's position after the rotation
-     * @param parent the node currently serving as the root of the subtree to be rotated, which will become the right
-     *               child of the child node
-     * @throws NullPointerException if both of the parent or child are null
-     * @throws IllegalArgumentException if the child is not the left child of the parent
-     */
-    private void rightRotate(BSTNode<T> child, BSTNode<T> parent) throws IllegalAccessException {
-        if (child == null || parent == null) {
-            throw new NullPointerException("Neither the parent nor the child node can be null");
-        }
-        // Ensure the child is the left child of the parent
-        if (parent.getLeft() != child) {
-            throw new IllegalAccessException();
-        }
-
-        // Adjust the nodes
-        parent.setLeft(child.getRight()); // The parent's left child is now child's right subtree
-        if (child.getRight() != null) { // Child right tree is not null
-            child.getRight().setUp(parent); // Set the new parent of child's right subtree
-        }
-
-        child.setRight(parent); // Child's right becomes the parent
-        // Update the child's parent reference to the parent's original parent
-        if (parent.getUp() != null) {
-            // If the parent was not the root, update the parent's parent's child reference
-            if (parent == parent.getUp().getLeft()) {
-                parent.getUp().setLeft(child);
-            } else {
-                parent.getUp().setRight(child);
-            }
-        } else { // If the parent was the root, now the child becomes the root
-            root = child;
-        }
-        // Update the new parent references
-        child.setUp(parent.getUp());
-        parent.setUp(child);
-        }
-
-    /**
-     * Performs a left rotation on the subtree rooted at the specific parent node. This operation promotes the right
-     * child to the parent's position in the subtree. The left subtree of the 'child' node becomes the right subtree of
-     * the parent.
-     * @param child the right child of the parent node that will be moved to the parent's position after the rotation
-     * @param parent the node currently serving as the root of the subtree to be rotated, which will become the left
-     *               child of the child node
-     * @throws NullPointerException if both parents and the child node are null
-     * @throws IllegalArgumentException if the child is not the right child of the parent
-     */
-    private void leftRotate(BSTNode<T> child, BSTNode<T> parent) throws IllegalArgumentException {
-        if (child == null || parent == null) {
-            throw new NullPointerException("Neither the parent nor the child node can be null");
-        }
-
-        // Ensure the child is the right child of the parent
-        if (parent.getRight() != child) {
-            throw new IllegalArgumentException();
-        }
-
-        // Adjust the nodes
-        parent.setRight(child.getLeft());
-        if (child.getLeft() != null) {
-            child.getLeft().setUp(parent);
-        }
-
-        // Promote the child to the parent's position
-        child.setLeft(parent);
-
-        if (parent.getUp() != null) { // Update the child's parent reference to the parent's original parent
-            if (parent == parent.getUp().getLeft()) {
-                // If the parent is not the root, update the parent's child reference
-                parent.getUp().setLeft(child);
-            } else {
-                parent.getUp().setRight(child);
-            }
-        } else { // If the parent was the root, now the child becomes the root
-            root = child;
-        }
-
-        // Update the new parent references
-        child.setUp(parent.getUp());
-        parent.setUp(child);
     }
 
     /**
