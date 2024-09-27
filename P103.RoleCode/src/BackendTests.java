@@ -21,7 +21,7 @@ class BackendTests {
     }
 
     @Test
-    void readData() {
+    void roleTest1() {
         // Test reading a sample data file
         assertDoesNotThrow(() -> backend.readData("src/songs.csv"));
 
@@ -39,7 +39,7 @@ class BackendTests {
      * Tester method for the getRange method in Backend class
      */
     @Test
-    void getRange() {
+    void roleTest2() {
         // Songs are preloaded in the Tree_Placeholder
         List<String> result = backend.getRange(-6, -4); // Using loudness values that match the provided songs
         assertEquals(3, result.size());
@@ -75,7 +75,7 @@ class BackendTests {
      * Tester method for the setFilter method in Backend class
      */
     @Test
-    void setFilter() {
+    void roleTest3() {
         // Insert a song with BPM 150 (above the threshold)
         Song newSong = new Song("New Song", "Artist", "Genre", 2022, 150, 90, 80, -5, 20);
         treePlaceholder.insert(newSong);
@@ -95,7 +95,7 @@ class BackendTests {
      * Tester method for the fiveMost method in Backend class
      */
     @Test
-    void fiveMost() {
+    void roleTest4() {
         // Placeholder songs include:
         // A L I E N S: 43
         // BO$$: 81
