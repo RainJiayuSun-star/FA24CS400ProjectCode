@@ -23,6 +23,5 @@ public class P104SubmissionChecker extends RedBlackTree<Integer> {
     * Override for the ensureRedProperty method with required signature.
     * This will cause compilation to fail if the method does not exist.
     */
-    public void protected void ensureRedProperty(RBTNode<T> newRedNode) {}
-
+    protected void ensureRedProperty(RBTNode<Integer> newRedNode) {}
 }
