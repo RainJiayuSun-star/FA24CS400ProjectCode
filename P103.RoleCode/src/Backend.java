@@ -208,8 +208,17 @@ public class Backend implements BackendInterface {
     public List<String> fiveMost() {
         // Initialize the song list to store the reordered songs
         List<Song> reorderedSongs = new ArrayList<>();
+        // Apply both filter and add songs
         for (Song song : tree) {
+            // Apply the loudness range filter
+            boolean filterLoudness = (low == null || song.getLoudness() >= low) && (high == null || song.getLoudness() <= high);
+            // Apply the speed threshold filter (if speedThreshold is not null)
+            boolean filterSpeed = (speedThreshold == null || song.getBPM() > speedThreshold);
+
+            // Add songs to the list if both filters match
+            if (filterLoudness && filterSpeed) {
             reorderedSongs.add(song);
+            }
         }
 
         // Sort by danceability in descending order
