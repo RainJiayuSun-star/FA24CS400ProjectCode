@@ -1,0 +1,60 @@
+<!--Requirements:
+1. A title element that names the algorithm, data structure, or tool that his page is about
+2. A meta tag that identifies you as the author
+3. At least two different level of header elements: h1, h2, h3...
+4. A list of some kind (either orderred or unorderred) with at least three elements: could be algorithm steps,
+    useful features, important tips to remember or use correctly, etc.
+5. An image depicting the data structure, tool/logo, or that in some other way relates to the topic of this page
+6. A link to at least one other webpage contaning more information about the topic of the page that you are writing
+-->
+
+<html>
+    <head>
+        <meta name="author" content="Rain Sun">
+        <meta name="author email" content="jsun424@wisc.edu">
+        <title>Red-Black Tree Insert Algorithm</title>
+        <link rel = "stylesheet" href = "style.css">
+    </head>
+    <body>
+        <header>
+            <h1>Red-Black Tree Insert Algorithm</h1>
+            <h2>Red-Black Tree Properties Review</h2>
+        </header>
+
+        <section id="properties-review">
+            <h3>Properties</h3>
+            <ul>
+                <li>Colors: every node is either red or black</li>
+                <li>Restriction: a red node cannot have a red child node</li>
+                <li>Balance: the black height is consistent across the tree</li>
+                <li>Bonus: the root node should always be black</li>
+            </ul>
+        </section>
+
+        <header>            
+            <h2>An Overview of the Insertion Process</h2>
+        </header>
+
+        <section id="algorithm-details">
+            <h3>Key steps</h3>
+            <ul>
+                <li>Insert the node as in a Binary Search Tree.</li>
+                <li>Color the new node red.</li>
+                <li>Fix violations (if there is one) using rotation and recoloring.</li>
+            </ul>
+        </section>
+
+        <header>
+            <h2>RBT Insertion Diagram Reference</h2>
+        </header>
+        <figure>
+            <img src="https://www.codeproject.com/KB/Articles/5301424/red_black_tree_delete_fixup-red-and-black.png" 
+             alt="Diagram of Red-Black Tree Insertion" class="tree-diagram">
+            <figcaption id = "footer-css">Diagram illustrating Red-Black Tree Insertion</figcaption>
+        </figure>
+
+        <footer>
+            <p id = "footer-css">For more detailed information, visit <a href= "https://www.geeksforgeeks.org/insertion-in-red-black-tree/" target="_blank">geeksforgeeks: insertion-in-red-black-tree</a></p>
+        </footer>
+    </body>
+</html>

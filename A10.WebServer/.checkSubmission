@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+if [[ $(grep -Pc "sendResponseHeaders\s*\(\s*200" HelloWebServer.java) -lt 1 ]]; then
+    echo "Warning Submission Incomplete: HTTP response code was not changed from 204 to 200"
+    exit 1
+fi
+
+echo "Submission Passed Basic Scan"
+exit 0

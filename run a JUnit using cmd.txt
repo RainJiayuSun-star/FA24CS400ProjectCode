@@ -1,0 +1,13 @@
+Compile: 
+General format: javac -cp .:junit5.jar Test.java
+Ex. javac -cp .:/home/jsun424/junit5.jar /home/jsun424/A03.JUnit/MyFirstJUnit.java
+
+Ex2. javac -cp .:../junit5.jar BackendTests.java
+
+
+
+Run: 
+General format: java -jar junit5.jar -cp . -c Test
+Ex. java -jar /home/jsun424/junit5.jar -cp .:/home/jsun424/A03.JUnit -c MyFirstJUnit
+
+Ex2. java -jar ../junit5.jar -cp . -c BackendTests

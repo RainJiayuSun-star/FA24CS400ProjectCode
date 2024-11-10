@@ -1,0 +1,29 @@
+1. Code Style
+- Examples of Inconsistant indentation and spacing:
+    In Frontend.java, there are inconsisant indentation and spacing that can improve.
+    For example, line 25 and line 28, the while loop has the same indent as the runCommandLoop()
+    and from 103 to 105 line, there are spacings that can be deleted. 
+- Examples of clear and concise variable names and methods; and names that are less clear and concise. 
+What makes those examples clear and concise, and how could the less clear and concise ones be improved.
+    Variable names and methods are easy to read and there are no fruther recommendations. 
+    For example in the Frontend class runCommandLoop method, the variable name "quit" and "input" are 
+        concise and can be easily understood
+- Examples (lines numbers) of code that is easily readable and code that is less easy to read. What makes 
+each of the examples either easy to read, or what would improve their readability?
+    All code are easy to read. I believe the appropriate spacing and indent makes it readable. Great job. 
+
+- Examples (line numbers) of code that is sufficiently commented to allow you to follow its logical steps 
+and code that does not have sufficient in-line comments.
+    I don't see any code commented in the App class and Frontend class. Although the code is concise and 
+    easy to read and understood, I wish there are some in-line comment for some loops and code that are 
+    comparatively more complicated than others. For example, for the setFilter method in Frontend class, 
+    it would be helpful if the for loop (from line 166 to 169) is commented: "print out each songs that fit the threshold". 
+
+2. Documentation
+- Share which methods are sufficiently documented, and which are not. What makes their documentation sufficient or insufficient?
+    The files are well documented. Very easy to understand what each methods do. 
+
+- Share specific examples of well specified parameters and return values of methods and constructors, and 
+others that are not well specified. What makes their specification effective or ineffective?
+
+

@@ -1,0 +1,11 @@
+Hello Everyone! I'm Rain. It's same as the weather rain. 
+My scenario is that I'm struggling to understand the code that was written by my partner because they have made use of several advanced techniques, some that are covered later in CS400 and others that you have never seen before. 
+
+In situations like this, I believe the key is to be patient and have a clear communication. First, I would approach to my partner with an open mindset and let them know I'm having difficulty following certain parts of the code. I would ask my teammate to comment the code so it's more easy to understand. 
+I would search up how these methods works and try to learn it too. 
+If I'm still confused about it, I would ask how each line works. 
+
+So overall, maintaining patience, curiosity, and a willingness to learn will foster a positive environment where both teammates can learn and succeed together in this course. 
+
+
+
